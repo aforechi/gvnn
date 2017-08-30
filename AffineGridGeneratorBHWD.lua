@@ -91,7 +91,7 @@ function AGG:updateGradInput(_transformMatrix, _gradGrid)
    local flattenedGradGrid = gradGrid:view(batchsize, self.width*self.height, 2)
    local flattenedBatchGrid = self.batchGrid:view(batchsize, self.width*self.height, 3)
    self.gradInput:resizeAs(transformMatrix):zero()
-   self.gradInput:baddbmm(flattenedGradGrid:transpose(2,3), flattenedBatchGrid)
+   self.gradInput:bmm(flattenedGradGrid:transpose(2,3), flattenedBatchGrid)
    -- torch.baddbmm doesn't work on cudatensors for some reason
 
    if _transformMatrix:nDimension()==2 then
