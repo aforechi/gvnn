@@ -1,7 +1,10 @@
 require 'nn'
-require 'cutorch'
+local withCuda = pcall(require, 'cutorch')
+
 require 'libgvnn'
-require 'libcugvnn'
+if withCuda then
+	require 'libcugvnn'
+end
 
 include('AffineTransformMatrixGenerator.lua')
 include('AffineGridGeneratorBHWD.lua')

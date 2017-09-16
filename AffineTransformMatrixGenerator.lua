@@ -154,7 +154,6 @@ function ATMG:updateGradInput(_tranformParams, _gradParams)
     gradParams = _gradParams:clone()
   end
 
---  print (gradParams:size())
 
   local batchSize = transformParams:size(1)
 
@@ -182,15 +181,6 @@ function ATMG:updateGradInput(_tranformParams, _gradParams)
 
       gradInputTranslationParams:copy(torch.bmm(selectedGradParams, selectedOutput))
 
-      print ( gradParams ) 
-
-      print ( selectedOutput ) 
- 
-      print ( selectedGradParams ) 
-  
-      print ( self.output ) 
- 
-      print ( gradInputTranslationParams ) 	 
 	
 	
       local gradientCorrection = torch.bmm(selectedGradParams:transpose(2,3), tParams)

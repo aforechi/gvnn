@@ -2,20 +2,19 @@ package = "gvnn"
 version = "scm-1"
 
 source = {
-   url = "git://github.com/ankurhanda/gvnn.git",
+   url = "git://github.com/aforechi/gvnn.git",
 }
 
 description = {
    summary = "gvnn: Neural Network Library for Geometric Vision",
    detailed = [[
    ]],
-   homepage = "https://github.com/ankurhanda/gvnn",
+   homepage = "https://github.com/aforechi/gvnn",
    license = "GPL"
 }
 
 dependencies = {
    "torch >= 7.0",
-   "cutorch >= 1.0",
    "nn >= 1.0",
 }
 
